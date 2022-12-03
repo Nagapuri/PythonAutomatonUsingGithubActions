@@ -1,0 +1,21 @@
+name: python-selenium-test
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  
+jobs:
+  test
+    runs-on: ubuntu-latest
+  
+    steps:
+      -name: test
+      uses: actions/checkout@v3
+      -name: setup-python v3
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+     
+      run: |
+        python3 demoui.py
