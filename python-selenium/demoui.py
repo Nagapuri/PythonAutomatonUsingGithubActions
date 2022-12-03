@@ -4,8 +4,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 # from webdriver_manager.chrome import ChromeType
 from webdriver_manager.core.utils import ChromeType
 
-driver_path = ChromeDriverManager(ChromeType.CHROMIUM).install()
-driver = webdriver.Chrome(driver_path)
+# driver_path = ChromeDriverManager(ChromeType.CHROMIUM).install()
+# driver = webdriver.Chrome(driver_path)
 
 driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
 
