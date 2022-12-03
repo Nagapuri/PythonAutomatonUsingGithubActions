@@ -8,8 +8,8 @@ from webdriver_manager.core.utils import ChromeType
 # driver_path = ChromeDriverManager(ChromeType.CHROMIUM).install()
 # driver = webdriver.Chrome(driver_path)
 # service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-chrome_options = Options()
-chrome_options.add_argument('--headless')
+chrome_options = webdriver.ChromeOptions()
+# chrome_options.add_argument('--headless')
 # optional
 chrome_options.add_argument('--no-sandbox')
 # optional
@@ -19,5 +19,7 @@ driver = webdriver.Chrome(options=chrome_options,service=ChromiumService(ChromeD
 # driver  = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
 # driver = webdriver.Chrome(ChromeDriverManager(ChromeType.CHROMIUM).install())
 # driver = webdriver.Chrome()
+# driver = webdriver.Chrome(options=chrome_options)
 driver.get("https://google.com")
+print(driver.title)
 
