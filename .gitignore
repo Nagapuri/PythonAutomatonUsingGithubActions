@@ -1,0 +1,16 @@
+.venv
+venv/
+
+.idea/
+*.log
+*.png
+*.apk
+*.app
+*.ipa
+target/
+*.manifest
+*.spec
+
+# Distribution / packaging
+.Python
+build/
