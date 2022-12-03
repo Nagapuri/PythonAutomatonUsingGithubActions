@@ -22,14 +22,19 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -U selenium
           pip install webdriver-manager
-      - name: Installed package list
-        run: apt list --installed
-      - name: Remove Chrome
-        run: sudo apt purge google-chrome-stable
-      - name: Remove default Chromium
-        run: sudo apt purge chromium-browser
-      - name: Install a new Chromium
-        run: sudo apt install -y chromium-browser
+      - name: Setup and install chromium browser
+        uses: abhi1693/setup-browser@v0.3.4
+        with:
+            browser: chrome
+            version: latest
+#      - name: Installed package list
+#        run: apt list --installed
+#      - name: Remove Chrome
+#        run: sudo apt purge google-chrome-stable
+#      - name: Remove default Chromium
+#        run: sudo apt purge chromium-browser
+#      - name: Install a new Chromium
+#        run: sudo apt install -y chromium-browser
       - name: run python scripts
         run: |
           python3 ./python-selenium/demoui.py
