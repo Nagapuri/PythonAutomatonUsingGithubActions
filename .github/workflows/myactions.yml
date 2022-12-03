@@ -20,6 +20,7 @@ jobs:
       - name: install dependencies
         run: |
           python3 -m pip install --upgrade pip
+          pip install -U selenium
       - name: run python scripts
         run: |
           python3 ./python-selenium/demoui.py
