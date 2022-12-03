@@ -24,7 +24,7 @@ jobs:
           pip install webdriver-manager
       - name: Setup and install chromium browser
         uses: browser-actions/setup-browser@latest
-        run: chrome --version
+      - run: chrome --version
       - name: Installed package list
         run: apt list --installed
 #      - name: Remove Chrome
