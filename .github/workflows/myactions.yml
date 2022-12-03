@@ -22,13 +22,13 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -U selenium
           pip install webdriver-manager
-      - name: Setup and install chromium browser
-        uses: browser-actions/setup-browser
-      - run: chrome --version
+#      - name: Setup and install chromium browser
+#        uses: browser-actions/setup-browser@v.0.0
+#      - run: chrome --version
       - name: Installed package list
         run: apt list --installed
-#      - name: Remove Chrome
-#        run: sudo apt purge google-chrome-stable
+      - name: Install Chrome
+        run: sudo apt install -y google-chrome-stable
 #      - name: Remove default Chromium
 #        run: sudo apt purge chromium-browser
 #      - name: Install a new Chromium
