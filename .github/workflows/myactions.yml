@@ -21,6 +21,7 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip install -U selenium
+          pip install webdriver-manager
       - name: Remove default Chromium
         run: sudo apt purge chromium-browser
       - name: Install a new Chromium
