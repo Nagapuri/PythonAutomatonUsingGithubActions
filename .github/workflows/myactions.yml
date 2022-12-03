@@ -27,8 +27,8 @@ jobs:
         with:
             browser: chrome
             version: latest
-#      - name: Installed package list
-#        run: apt list --installed
+      - name: Installed package list
+        run: apt list --installed
 #      - name: Remove Chrome
 #        run: sudo apt purge google-chrome-stable
 #      - name: Remove default Chromium
