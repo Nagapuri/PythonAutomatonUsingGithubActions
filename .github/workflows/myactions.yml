@@ -23,7 +23,7 @@ jobs:
           pip install -U selenium
           pip install webdriver-manager
       - name: Setup and install chromium browser
-        uses: browser-actions/setup-browser@latest
+        uses: browser-actions/setup-browser
       - run: chrome --version
       - name: Installed package list
         run: apt list --installed
