@@ -22,4 +22,4 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: run python scripts
         run: |
-          python3 demoui.py
+          python3 ./python-selenium/demoui.py
