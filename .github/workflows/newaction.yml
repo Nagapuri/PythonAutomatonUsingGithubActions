@@ -38,4 +38,5 @@ jobs:
 #        run: sudo apt install -y chromium-browser
       - name: run python scripts
         run: |
+          python3 print('hello world!!')
           python3 ./python-selenium/demouitest.py
