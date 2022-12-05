@@ -25,18 +25,24 @@ jobs:
 #      - name: Setup and install chromium browser
 #        uses: browser-actions/setup-browser@v.0.0
 #      - run: chrome --version
-      - name: Installed package list
-        run: apt list --installed
-      - name: Removing previous chrome instances on runner
-        run: sudo apt purge google-chrome-stable
-      - name: Install Chrome
+
+      - name: Install CHROME-DRIVER WEBDRIVER-MANAGER
         run: pip install chromedriver-py pyvirtualdisplay selenium webdriver-manager
 #        run: sudo apt install -y google-chrome-stable
 #      - name: Remove default Chromium
 #        run: sudo apt purge chromium-browser
 #      - name: Install a new Chromium
 #        run: sudo apt install -y chromium-browser
-      - name: run python scripts
+
+      - name: ISTALLED PACKAGES LIST
+        run: apt list --installed
+
+      - name: PRINT SOMETHING
+        uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            print("hello world!!")
+
+      - name: RUN PYTHON SCRIPTS
         run: |
-          python3 print('hello world!!')
           python3 ./python-selenium/demouitest.py
