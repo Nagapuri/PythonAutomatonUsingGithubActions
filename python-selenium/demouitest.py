@@ -1,0 +1,15 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeType
+from webdriver_manager.core.utils import ChromeType
+from chromedriver_py import binary_path
+
+service_object = Service(binary_path)
+
+driver = webdriver.Chrome(service=service_object)
+
+driver.get("https://google.com")
+print(driver.title)
+
