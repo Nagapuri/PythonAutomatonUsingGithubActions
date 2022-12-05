@@ -14,7 +14,7 @@ service_object = Service(binary_path)
 # driver = webdriver.Chrome(options=chrome_options,service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
 # driver = webdriver.Chrome(options=chrome_options)
 
-driver = webdriver.Chrome(service=service_object)
+driver = webdriver.Chrome()
 
 driver.get("https://google.com")
 print(driver.title)
