@@ -2,8 +2,13 @@ name: python-selenium-test
 on:
   push:
     branches: [ "master" ]
+    inputs:
+       version:
+         description: 'Version to update'
+         required: false
+         default: ''
   pull_request:
-    branches: [ "master" ]
+     branches: [ "master" ]
 
 jobs:
   test:
@@ -17,25 +22,31 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: install dependencies
-        run: |
-          python3 -m pip install --upgrade pip
+      - run: pip3 install -r requirements.txt
+      - name: Search for new version
+        run: python3 updater.py
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+
+#      - name: install dependencies
+#        run: |
+#          python3 -m pip install --upgrade pip
 #          pip install -U selenium
 #          pip install webdriver-manager
 #      - name: Setup and install chromium browser
 #        uses: browser-actions/setup-browser@v.0.0
 #      - run: chrome --version
 
-      - name: Install CHROME-DRIVER WEBDRIVER-MANAGER
-        run: pip install chromedriver-py pyvirtualdisplay selenium webdriver-manager
+#      - name: Install CHROME-DRIVER WEBDRIVER-MANAGER
+#        run: pip install chromedriver-py pyvirtualdisplay selenium webdriver-manager
 #        run: sudo apt install -y google-chrome-stable
 #      - name: Remove default Chromium
 #        run: sudo apt purge chromium-browser
 #      - name: Install a new Chromium
 #        run: sudo apt install -y chromium-browser
 
-      - name: ISTALLED PACKAGES LIST
-        run: apt list --installed
+#      - name: ISTALLED PACKAGES LIST
+#        run: apt list --installed
 
       - name: PRINT SOMETHING
         uses: jannekem/run-python-script-action@v1
